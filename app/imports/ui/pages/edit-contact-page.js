@@ -74,4 +74,12 @@ Template.Edit_Contact_Page.events({
   },
 });
 
+Template.Edit_Contact_Page.events({
+  'click .delete'(event) {
+    event.preventDefault();
+    Contacts.remove(FlowRouter.getParam('_id'));
+    FlowRouter.go('Home_Page');
+  },
+});
+
 //StudentData.update(FlowRouter.getParam('_id'), { $set: updatedStudentData });
